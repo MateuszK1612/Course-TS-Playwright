@@ -30,12 +30,12 @@ test.describe('Payment tests', () => {
 
     //Act
 
-    await paymentPage.transferReceiver.fill(transferReceiver);
-    await paymentPage.fromAccountTo.fill(transferAccount);
-    await paymentPage.formAmount.fill(transferAmount);
-    await paymentPage.buttonMakeTransfer.click();
-    await paymentPage.closeButton.click();
-
+    await paymentPage.makeTransfer(
+      transferReceiver,
+      transferAccount,
+      transferAmount
+    );
+  
     //Assert
     await expect(paymentPage.showMessage).toHaveText(expectedMessage);
   });
