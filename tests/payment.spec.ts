@@ -35,7 +35,7 @@ test.describe('Payment tests', () => {
       transferAccount,
       transferAmount
     );
-  
+
     //Assert
     await expect(paymentPage.showMessage).toHaveText(expectedMessage);
   });
